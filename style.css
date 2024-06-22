@@ -14,8 +14,9 @@ body {
   --tercially-color: #001f00;
   --semi-tercially: #386138;
   --hero-focus: #8bff8b;
-  --btn-color-hero: #ff5a28;
+  --btn-color-hero: #ff6638;
   --btn-hover-hero: #f16439;
+  --products-color: #666666;
 }
 .hero-head,
 .about-hero {
@@ -164,17 +165,24 @@ body {
   margin-bottom: 20px;
 }
 /* OUR PRODUCTS */
-.products {
-  margin: 0 auto;
-  border: 1px solid red;
+/* prices-cell */
+.major-price {
+  font-size: 2.8rem;
+  font-weight: 600;
 }
-.product-cell {
-  border: 1px solid red;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
-  /* align-items: center; */
-  justify-content: space-around;
+.other-price {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.prce-symbol {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.pricelogo {
+  font-size: 0.6rem;
+  margin-top: 2px;
+  font-weight: 600;
 }
 .products-head,
 .products-discription {
@@ -185,6 +193,34 @@ body {
   text-transform: capitalize;
   color: var(--tercially-color);
   margin-bottom: 20px;
+}
+.product-name {
+  font-size: 2.8rem;
+  color: var(--btn-color-hero);
+  letter-spacing: -0.3px;
+  margin-bottom: 30px;
+}
+.price {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #005834af;
+  color: var(--primary-color);
+  padding: 10px;
+  border-radius: 11px;
+  margin-bottom: 60px;
+}
+/* **************** */
+.products {
+  margin: 0 auto;
+}
+.product-cell {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  justify-content: space-around;
+  padding: 20px;
 }
 
 .products-discription {
@@ -197,9 +233,52 @@ body {
 .product-img {
   width: 100%;
   height: 410px;
+  border-radius: 11px;
+}
+.product-dis {
+  font-size: 1.3rem;
+  color: grey;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.wei {
+  font-size: 1.3rem;
+  color: #808080;
+  text-transform: capitalize;
+}
+.face {
+  text-transform: capitalize;
+  color: var(--products-color);
+  font-weight: 600;
+}
+.products-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.product-icon {
+  width: 45px;
+  height: 45px;
+  color: var(--products-color);
 }
 /* PARTNERS */
 .partner-logo {
   width: 14rem;
   height: 3rem;
+}
+/* ARTIFICIALS */
+.artificial {
+  margin: 0 auto;
+}
+.ranges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+  justify-content: space-around;
+}
+.feature-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
