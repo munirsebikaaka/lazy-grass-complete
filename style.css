@@ -282,3 +282,139 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+
+.checkmark-cell,
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+}
+.features {
+  /* margin-top: 40px; */
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 30px; */
+}
+.features {
+  gap: 20px;
+}
+.feature-dis {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: var(--products-color);
+}
+.checkmark {
+  width: 30px;
+  height: 30px;
+  color: var(--tercially-color);
+}
+/* PROJECTS */
+.projects {
+  width: 100%;
+  background-color: black;
+  padding: 50px;
+}
+.projects-head {
+  color: var(--primary-color);
+  text-align: center;
+}
+.founder {
+  color: var(--btn-color-hero);
+}
+.slider-container {
+}
+.slide {
+  /* width: 1000px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 60px;
+  margin-bottom: 30px;
+  /* padding: 60px; */
+}
+.projects-img {
+  width: 400px;
+  height: 500px;
+  border-radius: 21px;
+}
+/* HELP */
+.help {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px;
+  background-color: #edeeed;
+}
+/* FOOTER */
+footer {
+  background-color: #001a0bf5;
+
+  padding: 30px;
+}
+.footer-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.footer-link {
+  display: inline-block;
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+  text-transform: capitalize;
+  padding: 5px;
+  margin: 5px;
+  color: var(--primary-color);
+  transition: all 0.1s;
+}
+.footer-link:hover {
+  color: var(--btn-color-hero);
+}
+.footer-link-cell {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  display: flex;
+  gap: 50px;
+}
+.footer-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer p {
+  color: var(--primary-color);
+}
+.footer-icon {
+  color: var(--primary-color);
+  width: 30px;
+  height: 30px;
+}
+.footer-icons-cell {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+/* CLIENTS */
+.slide-client {
+  margin: 0 auto;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.client-sample {
+  width: 300px;
+  height: 300px;
+}
