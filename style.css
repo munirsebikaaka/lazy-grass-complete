@@ -83,6 +83,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .fixed-nav {
   position: fixed;
 }
@@ -277,6 +278,9 @@ body {
   height: 45px;
   color: var(--products-color);
 }
+.lazy-img {
+  filter: blur(20px);
+}
 /* PARTNERS */
 .partner-logo {
   width: 14rem;
@@ -429,6 +433,15 @@ footer p {
   height: 500px;
   overflow: hidden;
   border: 1px solid red;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff6638;
+}
+.active-dot {
+  background-color: #001f00;
 }
 .slide-client {
   /* margin: 0 auto; */
