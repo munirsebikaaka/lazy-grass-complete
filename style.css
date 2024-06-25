@@ -83,6 +83,9 @@ body {
   display: flex;
   align-items: center;
 }
+.fixed-nav {
+  position: fixed;
+}
 /* SECTION--HEROSECTION */
 .hero-section {
   width: 96%;
@@ -228,6 +231,7 @@ body {
   font-weight: 600;
   color: var(--btn-color-hero);
   margin-bottom: 50px;
+  transition: transform 1s, opacity 1s;
 }
 
 .product-img {
@@ -240,6 +244,17 @@ body {
   color: grey;
   font-weight: 500;
   margin-bottom: 40px;
+}
+.work-with {
+  transition: transform 1s, opacity 1s;
+}
+.pro-dis-hide {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+.pro-dis-hide2 {
+  opacity: 0;
+  transform: translate(-25rem);
 }
 .wei {
   font-size: 1.3rem;

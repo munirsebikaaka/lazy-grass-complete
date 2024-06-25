@@ -16,13 +16,13 @@
             /></a>
           </li>
           <li class="nav--link">
-            <a href="prods" class="links link-style">products</a>
+            <a href="#prodductsID" class="links link-style">products</a>
           </li>
           <li class="nav--link">
-            <a href="#" class="links link-style">pricing</a>
+            <a href="#ArtificialID" class="links link-style">pricing</a>
           </li>
           <li class="nav--link">
-            <a href="#" class="links link-style">projects</a>
+            <a href="#ProjectsID" class="links link-style">projects</a>
           </li>
         </ul>
 
@@ -63,9 +63,11 @@
         </div>
       </div>
     </section>
+    <button class="time">try</button>
+
     <h1 class="products-head">awesome turf products</h1>
     <p class="products-discription">WHICH TURF IS RIGHT FOR YOU?</p>
-    <section class="products" id="prods">
+    <section class="products work-with" id="prodductsID">
       <div class="product-cell">
         <div>
           <h1 class="product-name">KENTURKY BLUE LITE</h1>
@@ -209,7 +211,7 @@
       </div>
     </section>
 
-    <section class="partners">
+    <section class="partners work-with" id="partnersID">
       <h1 class="partners-discription">our partners</h1>
       <div>
         <img src="logos/business-insider.png" alt="" class="partner-logo" />
@@ -219,7 +221,7 @@
       </div>
     </section>
 
-    <section class="installation">
+    <section class="installation work-with" id="installationID">
       <h1 class="instalation-head">our installation process</h1>
       <p class="instalation-discription">
         DESIGNED FOR EXCEPTIONAL PERFOMANCE AND DRAINAGE
@@ -232,7 +234,7 @@
       />
     </section>
 
-    <section class="warranty">
+    <section class="warranty work-with" id="WarrantyID">
       <h1 class="warranty-head">our warranty</h1>
       <p class="dis">our warranty covers both products and workmanship</p>
       <div>
@@ -246,7 +248,7 @@
       </div>
     </section>
 
-    <section class="own">
+    <section class="own work-with" id="ownID">
       <h1 class="own-head">do your own estimate</h1>
       <p class="own-dis">instant quotes in less than 45 seconds</p>
       <input
@@ -257,7 +259,7 @@
       <button class="btn own-btn">DIY Estimate</button>
     </section>
 
-    <section class="artificial">
+    <section class="artificial work-with" id="ArtificialID">
       <h1 class="artificial-head">artificial grass pricing</h1>
       <p class="artificial-range">select a range of sq/ft</p>
       <div class="ranges">
@@ -388,35 +390,36 @@
       </div>
     </section>
 
-    <!-- <section class="projects">
+    <section class="projects work-with" id="ProjectsID">
       <h1 class="projects-head">
         Projects by <b class="founder">Lazy Lawn</b>
       </h1>
       <div class="slider-container">
-         <div class="slide">
+        <div class="slide">
           <img src="projects/img-1.jpg" alt="" class="projects-img" />
           <img src="projects/img-2.jpg" alt="" class="projects-img" />
           <img src="projects/img-3.jpg" alt="" class="projects-img" />
-        </div> -->
-    <!-- <div class="slide">
+        </div>
+        -->
+        <div class="slide">
           <img src="projects/img-4.jpg" alt="" class="projects-img" />
           <img src="projects/img-5.jpg" alt="" class="projects-img" />
           <img src="projects/img-6.jpg" alt="" class="projects-img" />
-        </div> -->
-    <!-- <div class="slide">
+        </div>
+        <div class="slide">
           <img src="projects/img-7.jpg" alt="" class="projects-img" />
           <img src="projects/img-8.jpg" alt="" class="projects-img" />
           <img src="projects/img-9.jpg" alt="" class="projects-img" />
-        </div> -->
-    <!-- <div class="slide">
+        </div>
+        <div class="slide">
           <img src="projects/img-10.jpg" alt="" class="projects-img" />
           <img src="projects/img-11.jpg" alt="" class="projects-img" />
           <img src="projects/img-12.jpg" alt="" class="projects-img" />
-        </div> -->
-    <!-- </div> -->
-    <!-- </section>  -->
+        </div>
+      </div>
+    </section>
 
-    <section class="clients">
+    <section class="clients work-with" id="clientsID">
       <div class="slide-client">
         <div>
           <blockquote>
@@ -465,14 +468,13 @@
           class="client-sample"
         />
       </div>
-      <button class="time">try</button>
       <div class="slide-btns">
         <button class="btn left">left</button>
         <button class="btn right">right</button>
       </div>
     </section>
 
-    <section class="help">
+    <section class="help work-with" id="helpID">
       <div>
         <h1 class="help-head">We are here to help</h1>
         <p class="help-dis">
@@ -489,13 +491,13 @@
       </div>
     </section>
 
-    <footer>
+    <footer id="footerID">
       <div class="footer-logo">
         <img src="logos/techcrunch.png" class="logoo" />
         <div class="footer-link-cell">
-          <a href="#" class="footer-link">products</a>
-          <a href="#" class="footer-link">pricing</a>
-          <a href="#" class="footer-link">projects</a>
+          <a href="#prodductsID" class="footer-link">products</a>
+          <a href="#ArtificialID" class="footer-link">pricing</a>
+          <a href="#ProjectsID" class="footer-link">projects</a>
         </div>
       </div>
 
@@ -532,5 +534,10 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="script.js"></script>
+
+    <!-- 
+    classes for annimations
+    lazy-img,
+    section--hidden -->
   </body>
 </html>
