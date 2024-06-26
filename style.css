@@ -249,10 +249,10 @@ body {
 .work-with {
   transition: transform 1s, opacity 1s;
 }
-.pro-dis-hide {
+/* .pro-dis-hide {
   opacity: 0;
   transform: translateY(8rem);
-}
+} */
 .pro-dis-hide2 {
   opacity: 0;
   transform: translate(-25rem);
@@ -346,21 +346,28 @@ body {
 .founder {
   color: var(--btn-color-hero);
 }
-/* .slider-container {
-} */
+.slider-container {
+  position: relative;
+  height: 800px;
+  overflow: hidden;
+}
 .slide {
-  /* width: 1000px; */
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 60px;
   margin-bottom: 30px;
-  /* padding: 60px; */
+  position: absolute;
+  top: 20%;
+  left: 20%;
 }
 .projects-img {
   width: 400px;
   height: 500px;
   border-radius: 21px;
+}
+.img-slide {
+  background-color: white;
 }
 /* HELP */
 .help {
@@ -434,7 +441,8 @@ footer p {
   overflow: hidden;
   border: 1px solid red;
 }
-.dot {
+.dot,
+.dot-img {
   width: 20px;
   height: 20px;
   border-radius: 50%;

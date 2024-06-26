@@ -8,9 +8,12 @@ const navigationCell = document.querySelector(".application-nav");
 const footerNav = document.querySelector(".footer-logo");
 const appLinks = document.querySelectorAll(".working-link");
 const containerDots = document.querySelector(".dots");
+const imgDotsContainer = document.querySelector(".container-img-dots");
 
 const btnLeft = document.querySelector(".left");
 const btnRight = document.querySelector(".right");
+const btnImageRight = document.querySelector(".img-right");
+const btnImageLeft = document.querySelector(".img-left");
 
 //SMOOTH SCROLLING FUNCTIONALLITY
 function workWithSmoothScrollings(target) {
@@ -90,21 +93,21 @@ const prosObj = {
 
 const elPRODis = new IntersectionObserver(obsFUNC, prosDisc);
 elPRODis.observe(prosDisc);
-//CLIENT SLIDER FUNCTIONALLITY
+
+//APPLICATION SLIDER FUNCTIONALLITY
+const projectsSlider = document.querySelectorAll(".slide");
 let curValue = 0;
 let maxlength = clientsSlide.length;
 let time = 3;
 let secTime = 5;
 let thirTime = 7;
-clientsSlide.forEach(
-  (slide, i) => (slide.style.transform = `translateX(${100 * i}%)`)
-);
-
-const slideSolution = function (slideValue) {
-  clientsSlide.forEach((slide, i) => {
-    slide.style.transform = `translateX(${100 * (i - slideValue)}%)`;
-  });
-};
+function addTransformPropertyToSliders(sliders) {
+  sliders.forEach(
+    (slide, i) => (slide.style.transform = `translateX(${100 * i}%)`)
+  );
+}
+addTransformPropertyToSliders(clientsSlide);
+addTransformPropertyToSliders(projectsSlider);
 
 clientsSlide.forEach((el, i) => {
   containerDots.insertAdjacentHTML(
@@ -112,52 +115,84 @@ clientsSlide.forEach((el, i) => {
     `<p class="dot" data-slide="${i}"></p>`
   );
 });
+
+projectsSlider.forEach((slider, i) => {
+  imgDotsContainer.insertAdjacentHTML(
+    "beforeend",
+    `<p class="dot-img" data-slider="${i}"></p>`
+  );
+});
+const activeDot = function (slide) {
+  document
+    .querySelectorAll(".dot")
+    .forEach((el) => el.classList.remove("active-dot"));
+  document
+    .querySelector(`.dot[data-slide='${slide}']`)
+    .classList.add("active-dot");
+};
+
+const slideSolution = function (slideElement, slideValue) {
+  slideElement.forEach((slide, i) => {
+    slide.style.transform = `translateX(${100 * (i - slideValue)}%)`;
+  });
+};
+
+function slideToRight(slidePage) {
+  if (curValue === maxlength - 1) curValue = -1;
+  curValue++;
+  slideSolution(slidePage, curValue);
+  activeDot(curValue);
+}
+
+function slideToLeft(slidePage) {
+  if (curValue === 0) curValue = maxlength;
+  curValue--;
+  slideSolution(slidePage, curValue);
+  activeDot(curValue);
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key == "ArrowRight") slideToRight(clientsSlide);
+  if (e.key === "ArrowLeft") slideToLeft(clientsSlide);
+});
+
 containerDots.addEventListener("click", (e) => {
   if (e.target.classList.contains("dot")) {
     const slide = e.target.dataset.slide;
     slideSolution(slide);
+    activeDot(slide);
   }
 });
-const dot = document.querySelectorAll(".dot");
-dot[0].classList.add("active-dot");
-const activateDot = function (slide) {
-  dot.forEach((el) => el.classList.remove("active-dot"));
-  document
-    .querySelector(`.dot [data-slide='${slide}']`)
-    .classList.add("active-dot");
-};
-// activateDot();
-function slideToRight() {
-  if (curValue === maxlength - 1) curValue = -1;
-  curValue++;
-  slideSolution(curValue);
-  activateDot(curValue);
-}
-
-function slideToLeft() {
-  if (curValue === 0) curValue = maxlength;
-  curValue--;
-  slideSolution(curValue);
-}
-
-document.addEventListener("keydown", function (e) {
-  if (e.key == "ArrowRight") slideToRight();
-  if (e.key === "ArrowLeft") slideToLeft();
+imgDotsContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("dot-img")) {
+    const slider = e.target.dataset.slider;
+    // slideSolution(slider);
+  }
 });
-
 setInterval(function () {
   time--;
   secTime--;
   thirTime--;
   if (time === 0) {
-    slideToRight();
+    slideToRight(clientsSlide);
   }
   if (secTime === 0) {
-    slideToRight();
+    slideToRight(clientsSlide);
   }
   if (thirTime === 0) {
-    slideToRight();
+    slideToRight(clientsSlide);
   }
 }, 1000);
-btnRight.addEventListener("click", slideToRight);
-btnLeft.addEventListener("click", slideToLeft);
+
+btnRight.addEventListener("click", function () {
+  slideToRight(clientsSlide);
+});
+btnLeft.addEventListener("click", function () {
+  slideToLeft(clientsSlide);
+});
+btnImageRight.addEventListener("click", function () {
+  slideToRight(projectsSlider);
+});
+btnImageLeft.addEventListener("click", function () {
+  slideToLeft(projectsSlider);
+});
