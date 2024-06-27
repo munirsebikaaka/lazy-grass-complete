@@ -7,6 +7,7 @@ body {
   margin: 0 auto;
   position: relative;
   font-family: sans-serif;
+  background-color: #f2f3f2;
 }
 /* COMBINED SECTION DESIGNS */
 :root {
@@ -31,9 +32,7 @@ body {
 .application-nav {
   padding: 5px 5px;
   border: 1px solid #eeeeee;
-  border-radius: 11px;
   margin-bottom: 20px;
-  margin-top: 5px;
 }
 .application-lists {
   display: flex;
@@ -86,12 +85,18 @@ body {
 
 .fixed-nav {
   position: fixed;
+  width: 100%;
+  background-color: var(--primary-color);
+  z-index: 100;
+}
+.tryout {
+  height: 100px;
 }
 /* SECTION--HEROSECTION */
 .hero-section {
   width: 96%;
   margin: 0 auto;
-  background-image: url(projects/img-5.jpg);
+  background-image: url(main-imgs/img-1.jpg);
   background-size: cover;
   height: 90vh;
   border-radius: 35px;
@@ -117,6 +122,7 @@ body {
   margin-bottom: 55px;
   font-weight: 500;
   letter-spacing: 0.5px;
+  line-height: 1.5;
 }
 .register-hero {
   border-radius: 11px;
@@ -168,6 +174,28 @@ body {
   justify-content: space-between;
   margin-bottom: 20px;
 }
+/* owns */
+.own {
+  border-radius: 11px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+.own-head {
+  font-size: 26px;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: var(--tercially-color);
+}
+.own-dis {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: var(--semi-tercially);
+  letter-spacing: 1px;
+  display: flex;
+}
+
+/* owns */
 /* OUR PRODUCTS */
 /* prices-cell */
 .major-price {
@@ -189,20 +217,64 @@ body {
   font-weight: 600;
 }
 .products-head,
-.products-discription {
+.products-discription,
+.instalation-head,
+.instalation-discription,
+.warranty-head,
+.dis,
+.artificial-head,
+.artificial-range {
   text-align: center;
 }
-.products-head {
-  font-size: 3rem;
+.products-head,
+.instalation-head,
+.warranty-head,
+.artificial-head {
+  font-size: 3.5rem;
   text-transform: capitalize;
   color: var(--tercially-color);
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+}
+.products-discription,
+.instalation-discription,
+.dis,
+.artificial-range {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--btn-color-hero);
+  margin-bottom: 8rem;
+  transition: transform 1s, opacity 1s;
+}
+.instalation-discription {
+  font-size: 1.5rem;
+}
+.instalation-head {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+.installation-img {
+  width: 100%;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  border-radius: 100px;
+}
+.installation {
+  border: 1px solid red;
+  width: 80rem;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .product-name {
   font-size: 2.8rem;
   color: var(--btn-color-hero);
   letter-spacing: -0.3px;
-  margin-bottom: 30px;
+  margin-bottom: 0.8rem;
 }
 .price {
   width: 100px;
@@ -213,7 +285,7 @@ body {
   color: var(--primary-color);
   padding: 10px;
   border-radius: 11px;
-  margin-bottom: 60px;
+  margin-bottom: 4rem;
 }
 /* **************** */
 .products {
@@ -222,23 +294,20 @@ body {
 .product-cell {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
+  gap: 7rem;
   justify-content: space-around;
-  padding: 20px;
+  padding: 0 40px;
+  margin-bottom: 8rem;
 }
-
-.products-discription {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--btn-color-hero);
-  margin-bottom: 50px;
-  transition: transform 1s, opacity 1s;
+.prodducts-ct-cell {
+  margin-right: 2rem;
 }
 
 .product-img {
   width: 100%;
   height: 410px;
   border-radius: 11px;
+  margin-top: 2rem;
 }
 .product-dis {
   font-size: 1.3rem;
@@ -282,9 +351,33 @@ body {
   filter: blur(20px);
 }
 /* PARTNERS */
+.partners {
+  width: 70rem;
+  margin: 0 auto;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  padding: 4rem;
+  margin-bottom: 7rem;
+}
 .partner-logo {
-  width: 14rem;
-  height: 3rem;
+  width: 9.5rem;
+  height: 2rem;
+}
+.prtners-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 60px;
+}
+.partners-discription {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #001f00;
 }
 /* ARTIFICIALS */
 .artificial {
@@ -440,6 +533,13 @@ footer p {
   height: 500px;
   overflow: hidden;
   border: 1px solid red;
+}
+.clients-head {
+  font-size: 3.5rem;
+  text-transform: capitalize;
+  color: var(--tercially-color);
+  margin-bottom: 40px;
+  text-align: center;
 }
 .dot,
 .dot-img {

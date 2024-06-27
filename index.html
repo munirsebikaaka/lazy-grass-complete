@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="application-nav">
+    <nav class="application-nav fixed-nav">
       <div class="nav-design">
         <ul class="application-lists">
           <li class="nav--link">
@@ -44,6 +44,7 @@
         </ul>
       </div>
     </nav>
+    <div class="tryout"></div>
 
     <section class="hero-section">
       <div class="hero-content-cell">
@@ -75,7 +76,11 @@
     <p class="products-discription">WHICH TURF IS RIGHT FOR YOU?</p>
     <section class="products work-with" id="prodductsID">
       <div class="product-cell">
-        <div>
+        <img
+          src="products/StockCake-Lush Artificial Turf_1718622698.jpg"
+          class="product-img"
+        />
+        <div class="prodducts-ct-cell">
           <h1 class="product-name">KENTURKY BLUE LITE</h1>
           <span class="price">
             <p class="prce-symbol">$</p>
@@ -117,17 +122,9 @@
             ></span>
           </div>
         </div>
-        <img
-          src="products/StockCake-Lush Artificial Turf_1718622698.jpg"
-          class="product-img"
-        />
       </div>
       <div class="product-cell">
-        <img
-          src="products/StockCake-Lush Green Lawn_1718623103.jpg"
-          class="product-img"
-        />
-        <div>
+        <div class="prodducts-ct-cell">
           <h1 class="product-name">KENTURKY BLUE LIGHT</h1>
           <span class="price">
             <p class="prce-symbol">$</p>
@@ -152,7 +149,10 @@
             </p>
           </div>
         </div>
-        <div></div>
+        <img
+          src="products/StockCake-Lush Green Lawn_1718623103.jpg"
+          class="product-img"
+        />
       </div>
 
       <div class="product-cell">
@@ -160,7 +160,7 @@
           src="products/StockCake-Manicured Lawn Estate_1718622767.jpg"
           class="product-img"
         />
-        <div>
+        <div class="prodducts-ct-cell">
           <h1 class="product-name">KENTURKY BLUE LIGHT</h1>
           <span class="price">
             <p class="prce-symbol">$</p>
@@ -188,7 +188,7 @@
       </div>
 
       <div class="product-cell">
-        <div>
+        <div class="prodducts-ct-cell">
           <h1 class="product-name">KENTURKY BLUE LIGHT</h1>
           <span class="price">
             <p class="prce-symbol">$</p>
@@ -219,7 +219,7 @@
 
     <section class="partners work-with" id="partnersID">
       <h1 class="partners-discription">our partners</h1>
-      <div>
+      <div class="prtners-cell">
         <img src="logos/business-insider.png" alt="" class="partner-logo" />
         <img src="logos/forbes.png" alt="" class="partner-logo" />
         <img src="logos/techcrunch.png" alt="" class="partner-logo" />
@@ -228,11 +228,12 @@
     </section>
 
     <section class="installation work-with" id="installationID">
-      <h1 class="instalation-head">our installation process</h1>
-      <p class="instalation-discription">
-        DESIGNED FOR EXCEPTIONAL PERFOMANCE AND DRAINAGE
-      </p>
-
+      <div>
+        <h1 class="instalation-head">our installation process</h1>
+        <p class="instalation-discription">
+          DESIGNED FOR EXCEPTIONAL PERFOMANCE AND DRAINAGE
+        </p>
+      </div>
       <img
         src="main-imgs/StockCake-Elegant Estate Grounds_1718623578.jpg"
         alt=""
@@ -257,12 +258,14 @@
     <section class="own work-with" id="ownID">
       <h1 class="own-head">do your own estimate</h1>
       <p class="own-dis">instant quotes in less than 45 seconds</p>
-      <input
-        type="text"
-        class="own-input"
-        placeholder="please enter address to start"
-      />
-      <button class="btn own-btn">DIY Estimate</button>
+      <div>
+        <input
+          type="text"
+          class="own-input"
+          placeholder="please enter address to start"
+        />
+        <button class="btn own-btn">DIY Estimate</button>
+      </div>
     </section>
 
     <section class="artificial work-with" id="ArtificialID">
@@ -426,7 +429,7 @@
       </div>
       <div class="container-img-dots"></div>
     </section>
-
+    <h1 class="clients-head">What Our Clients are Saying...</h1>
     <section class="clients work-with" id="clientsID">
       <div class="slide-client">
         <div>
