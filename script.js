@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 // const clientsSlide = document.querySelectorAll(".slide-client");
 // const prosDisc = document.querySelector(".products-discription");
 // const workWithSections = document.querySelectorAll(".work-with");
