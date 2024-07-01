@@ -1,0 +1,95 @@
+@media (max-width: 1200px) {
+  .projects-img {
+    width: 300px;
+    height: 400px;
+    border-radius: 30px;
+  }
+  .slider__btn--left {
+    left: 2%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slider__btn--right {
+    right: 2%;
+    transform: translate(50%, -50%);
+  }
+  .slider__btn {
+    height: 5rem;
+    width: 5rem;
+    font-size: 3rem;
+  }
+  .slide-client {
+    width: 900px;
+    height: 500px;
+
+    gap: 50px;
+    padding: 20px;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 1000px) {
+  .own {
+    width: 50rem;
+  }
+  .help {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .help-head {
+    text-align: center;
+  }
+  .partners {
+    width: 50rem;
+  }
+  .installation {
+    width: 60rem;
+  }
+  .slide-imgs-only,
+  .artificial-in-small {
+    display: block;
+  }
+
+  .about,
+  .features,
+  .slider-container {
+    display: none;
+  }
+}
+@media (max-width: 685px) {
+  .hero-section {
+    height: 100vh;
+  }
+  .hero-inputs {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .register-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .register-hero {
+    padding: 10px 0;
+  }
+  .hero-content-cell {
+    width: 600px;
+    position: absolute;
+    top: 200px;
+    left: 4%;
+  }
+  .slide-client {
+    max-width: 600px;
+    height: 500px;
+    display: flex;
+    /* align-items: center;
+    justify-content: space-around; */
+    flex-direction: column;
+    gap: 50px;
+    position: absolute;
+    transition: transform 1s;
+    padding: 20px;
+    margin-right: 20px;
+  }
+}
