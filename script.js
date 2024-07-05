@@ -139,12 +139,12 @@ addTransformPropertyToSliders(projectsSlider);
 
 //CLIENTS ONLY
 
-const activeDot = function (slide) {
+const activeDot = function (classes, slide, slidesType, classToAdd) {
   document
-    .querySelectorAll(".dot")
+    .querySelectorAll(classes)
     .forEach((el) => el.classList.remove("active-dot"));
   document
-    .querySelector(`.dot[data-slide='${slide}']`)
+    .querySelector(`${classToAdd}[data-${slidesType}='${slide}']`)
     .classList.add("active-dot");
 };
 
@@ -154,18 +154,18 @@ const slideSolution = function (slideCell, slideValue) {
   });
 };
 
-function slideToRight(slide) {
+function slideToRight(slide, classToRemove, slideTYPE, addClassALL) {
   if (curValue === maxlength - 1) curValue = -1;
   curValue++;
   slideSolution(slide, curValue);
-  activeDot(curValue);
+  activeDot(classToRemove, curValue, slideTYPE, addClassALL);
 }
 
-function slideToLeft(slide) {
+function slideToLeft(slide, classToRemove, slideTYPE, addClassALL) {
   if (curValue === 0) curValue = maxlength;
   curValue--;
   slideSolution(slide, curValue);
-  activeDot(curValue);
+  activeDot(classToRemove, curValue, slideTYPE, addClassALL);
 }
 
 // function autoSlide() {
@@ -186,17 +186,33 @@ function slideToLeft(slide) {
 // }
 // autoSlide();
 btnRight.addEventListener("click", function () {
-  slideToRight(clientsSlide);
+  slideToRight(clientsSlide, ".dot", "slide", ".dot");
 });
 btnLeft.addEventListener("click", function () {
-  slideToLeft(clientsSlide);
+  slideToLeft(clientsSlide, ".dot", "slide", ".dot");
+});
+
+//PROJECTS SECTION
+projectsSlider.forEach((el, i) =>
+  imgDotsContainer.insertAdjacentHTML(
+    "beforeend",
+    `
+    <p class="dot-img" data-slider="${i}"></p>
+`
+  )
+);
+imgDotsContainer.addEventListener("click", function (e) {
+  if (!e.target.classList.contains("dot-img")) return;
+  const slider = e.target.dataset.slider;
+  slideSolution(projectsSlider, slider);
+  activeDot(".dot-img", curValue, slider);
 });
 
 btnImageRight.addEventListener("click", function () {
-  slideToRight(projectsSlider);
+  slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
 });
 btnImageLeft.addEventListener("click", function () {
-  slideToLeft(projectsSlider);
+  slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
 });
 
 clientsSlide.forEach((el, i) =>
@@ -207,20 +223,7 @@ clientsSlide.forEach((el, i) =>
 );
 containerDots.addEventListener("click", function (e) {
   if (!e.target.classList.contains("dot")) return alert("wrong");
-  const { slide } = e.target.dataset;
-  slideSolution(slide);
-  activeDot(slide);
+  const slide = e.target.dataset.slide;
+  slideSolution(clientsSlide, slide);
+  activeDot(".dot", slide);
 });
-// projectsSlider.forEach((el, i) =>
-//   imgDotsContainer.insertAdjacentHTML(
-//     "beforeend",
-//     `
-//     <p class="dot-img" data-slider="${i}"></p>
-// `
-//   )
-// );
-// imgDotsContainer.addEventListener("click", function (e) {
-//   if (!e.target.classList.contains("dot-img")) return;
-//   const slider = e.target.dataset.slider;
-//   slideSolution(slider);
-// });

@@ -492,6 +492,7 @@ body {
   width: 100%;
   background-color: black;
   padding: 50px;
+  overflow: hidden;
 }
 .projects-head {
   color: var(--primary-color);
