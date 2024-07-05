@@ -31,6 +31,8 @@ body {
 }
 /* NAVIGATION */
 .application-nav {
+  border: 1px solid red;
+
   padding: 5px 5px;
   border: 1px solid #eeeeee;
   margin-bottom: 20px;
@@ -175,16 +177,6 @@ body {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-/* owns */
-/* owns */
-/* owns */
-/* owns */
-/* owns */
-/* owns */
-/* owns */
-/* owns */
-/* owns */
-/* owns */
 /* owns */
 .own {
   width: 70rem;
@@ -332,10 +324,10 @@ body {
 .work-with {
   transition: transform 1s, opacity 1s;
 }
-/* .pro-dis-hide {
+.pro-dis-hide {
   opacity: 0;
   transform: translateY(8rem);
-} */
+}
 .pro-dis-hide2 {
   opacity: 0;
   transform: translate(-25rem);
@@ -365,6 +357,7 @@ body {
   filter: blur(20px);
 }
 /* PARTNERS */
+
 .partners {
   width: 75rem;
   margin: 0 auto;
@@ -548,6 +541,8 @@ body {
 /* HELP */
 /* HELP */
 .help {
+  border: 1px solid red;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -572,6 +567,7 @@ body {
 }
 /* FOOTER */
 footer {
+  border: 1px solid red;
   background-color: #001a0bf5;
 
   padding: 30px;
@@ -627,6 +623,7 @@ footer p {
 }
 /* CLIENTS */
 .clients {
+  border: 1px solid red;
   position: relative;
   width: 1010px;
   margin: 0 auto;
@@ -704,6 +701,7 @@ footer p {
 .positon-client-slide {
   width: 100%;
   position: relative;
+  border: 5px dotted blue;
 }
 .slider__btn {
   position: absolute;
