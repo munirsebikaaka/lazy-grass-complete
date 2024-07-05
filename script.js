@@ -10,12 +10,29 @@ const appLinks = document.querySelectorAll(".working-link");
 const containerDots = document.querySelector(".dots");
 const imgDotsContainer = document.querySelector(".container-img-dots");
 const heroInput = document.querySelector(".register-input");
+const clientsCell = document.querySelector(".clients");
+const projectsCell = document.querySelector(".projects");
+const projectsSlider = document.querySelectorAll(".slide");
 
 const btnLeft = document.querySelector(".left");
 const btnRight = document.querySelector(".right");
 const btnImageRight = document.querySelector(".img-right");
 const btnImageLeft = document.querySelector(".img-left");
 const startRequestBTN = document.querySelectorAll(".chech-input");
+
+let curValue = 0;
+let maxlength = clientsSlide.length;
+//CLIENT SLIDER TIMES
+let time = 3;
+let secTime = 5;
+let thirTime = 7;
+let forthTime = 9;
+
+//PROJECT SLIDER TIMES
+let proTime1 = 3;
+let proTime2 = 5;
+let proTime3 = 7;
+let proTime4 = 9;
 
 //SMOOTH SCROLLING FUNCTIONALLITY
 startRequestBTN.forEach((btn) =>
@@ -65,7 +82,6 @@ function lazyLoadingImage(img) {
 applicationImages.forEach((img) => lazyLoadingImage(img));
 
 //POSITIONING THE NAVIGATION
-
 function positionNavigation() {
   const navPosition = new IntersectionObserver(
     function (entries) {
@@ -123,12 +139,6 @@ function proHeadAnimation() {
 proHeadAnimation();
 
 //APPLICATION SLIDER FUNCTIONALLITY
-const projectsSlider = document.querySelectorAll(".slide");
-let curValue = 0;
-let maxlength = clientsSlide.length;
-let time = 3;
-let secTime = 5;
-let thirTime = 7;
 function addTransformPropertyToSliders(sliders) {
   sliders.forEach(
     (slide, i) => (slide.style.transform = `translateX(${100 * i}%)`)
@@ -168,23 +178,44 @@ function slideToLeft(slide, classToRemove, slideTYPE, addClassALL) {
   activeDot(classToRemove, curValue, slideTYPE, addClassALL);
 }
 
-// function autoSlide() {
-//   setInterval(function () {
-//     time--;
-//     secTime--;
-//     thirTime--;
-//     if (time === 0) {
-//       slideToRight(clientsSlide);
-//     }
-//     if (secTime === 0) {
-//       slideToRight(clientsSlide);
-//     }
-//     if (thirTime === 0) {
-//       slideToRight(clientsSlide);
-//     }
-//   }, 1000);
-// }
-// autoSlide();
+function clientsAutoSlide() {
+  setInterval(function () {
+    time--;
+    secTime--;
+    thirTime--;
+    forthTime--;
+    if (time === 0) {
+      slideToRight(clientsSlide, ".dot", "slide", ".dot");
+    }
+    if (secTime === 0) {
+      slideToRight(clientsSlide, ".dot", "slide", ".dot");
+    }
+    if (thirTime === 0) {
+      slideToRight(clientsSlide, ".dot", "slide", ".dot");
+    }
+    if (forthTime === 0) {
+      slideToRight(clientsSlide, ".dot", "slide", ".dot");
+    }
+  }, 1000);
+}
+
+function projectsAutoSlider() {
+  setInterval(function () {
+    proTime1--;
+    proTime2--;
+    proTime3--;
+    proTime4--;
+    if (proTime1 === 0)
+      slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
+    if (proTime2 === 0)
+      slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
+    if (proTime3 === 0)
+      slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
+    if (proTime4 === 0)
+      slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
+  }, 1000);
+}
+
 btnRight.addEventListener("click", function () {
   slideToRight(clientsSlide, ".dot", "slide", ".dot");
 });
@@ -201,29 +232,60 @@ projectsSlider.forEach((el, i) =>
 `
   )
 );
-imgDotsContainer.addEventListener("click", function (e) {
-  if (!e.target.classList.contains("dot-img")) return;
-  const slider = e.target.dataset.slider;
-  slideSolution(projectsSlider, slider);
-  activeDot(".dot-img", curValue, slider);
-});
+function clickEventsOfTheImgSlidesSections() {
+  imgDotsContainer.addEventListener("click", function (e) {
+    if (!e.target.classList.contains("dot-img")) return;
+    const slider = e.target.dataset.slider;
+    slideSolution(projectsSlider, slider);
+    activeDot(".dot-img", slider);
+  });
 
-btnImageRight.addEventListener("click", function () {
-  slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
-});
-btnImageLeft.addEventListener("click", function () {
-  slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
-});
+  btnImageRight.addEventListener("click", function () {
+    slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
+  });
+  btnImageLeft.addEventListener("click", function () {
+    slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
+  });
 
-clientsSlide.forEach((el, i) =>
-  containerDots.insertAdjacentHTML(
-    "beforeend",
-    `<p class='dot' data-slide='${i}'></p>`
-  )
-);
-containerDots.addEventListener("click", function (e) {
-  if (!e.target.classList.contains("dot")) return alert("wrong");
-  const slide = e.target.dataset.slide;
-  slideSolution(clientsSlide, slide);
-  activeDot(".dot", slide);
-});
+  clientsSlide.forEach((el, i) =>
+    containerDots.insertAdjacentHTML(
+      "beforeend",
+      `<p class='dot' data-slide='${i}'></p>`
+    )
+  );
+  containerDots.addEventListener("click", function (e) {
+    if (!e.target.classList.contains("dot")) return alert("wrong");
+    const slide = e.target.dataset.slide;
+    slideSolution(clientsSlide, slide);
+    activeDot(".dot", slide);
+  });
+}
+clickEventsOfTheImgSlidesSections();
+function clientObserver() {
+  const clientSlideObserver = new IntersectionObserver(
+    function (entries) {
+      const [entry] = entries;
+      if (entry.isIntersecting) clientsAutoSlide();
+    },
+    {
+      root: null,
+      threshold: 0,
+    }
+  );
+  clientSlideObserver.observe(clientsCell);
+}
+clientObserver();
+function projectsObserver() {
+  const projectsCellObserver = new IntersectionObserver(
+    function (entries) {
+      const [entry] = entries;
+      if (entry.isIntersecting) projectsAutoSlider();
+    },
+    {
+      root: null,
+      threshold: 0,
+    }
+  );
+  projectsCellObserver.observe(projectsCell);
+}
+projectsObserver();
