@@ -41,8 +41,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
 }
+
 .nav--link {
   list-style: none;
 }
@@ -56,7 +57,7 @@ body {
 }
 .nav-design {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-around;
 }
 .btn-link-des {
@@ -94,6 +95,14 @@ body {
 }
 .tryout {
   height: 100px;
+}
+.menu {
+  height: 40px;
+  width: 40px;
+}
+.resposive-nav,
+.close-menu {
+  display: none;
 }
 /* SECTION--HEROSECTION */
 .hero-section {
@@ -359,6 +368,7 @@ body {
 /* PARTNERS */
 
 .partners {
+  border: 1px solid red;
   width: 75rem;
   margin: 0 auto;
 }
@@ -488,12 +498,22 @@ body {
   color: var(--tercially-color);
 }
 /* PROJECTS */
+/* PROJECTS */
+/* PROJECTS */
+/* PROJECTS */
+/* PROJECTS */
+/* PROJECTS */
+/* PROJECTS */
+/* PROJECTS */
+/* PROJECTS */
 .projects {
   width: 100%;
   background-color: black;
   padding: 50px;
   overflow: hidden;
+  position: relative;
 }
+
 .projects-head {
   color: var(--primary-color);
   text-align: center;
@@ -623,6 +643,25 @@ footer p {
   gap: 40px;
 }
 /* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
+/* CLIENTS */
 .clients {
   border: 1px solid red;
   position: relative;
@@ -702,7 +741,18 @@ footer p {
 .positon-client-slide {
   width: 100%;
   position: relative;
-  border: 5px dotted blue;
+}
+
+.container-img-dots,
+.dots {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+}
+.dots {
+  /* bottom: -8%; */
+  left: 47%;
 }
 .slider__btn {
   position: absolute;
@@ -720,12 +770,12 @@ footer p {
   cursor: pointer;
 }
 .slider__btn--left {
-  left: 6%;
+  left: 2%;
   transform: translate(-50%, -50%);
 }
 
 .slider__btn--right {
-  right: 6%;
+  right: 2%;
   transform: translate(50%, -50%);
 }
 .warranty-dis {

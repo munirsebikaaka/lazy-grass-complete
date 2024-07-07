@@ -31,6 +31,23 @@
     gap: 50px;
     position: absolute;
   }
+  .slider__btn {
+    top: 105%;
+    height: 5rem;
+    width: 5rem;
+    font-size: 3rem;
+  }
+  .slider__btn--left {
+    left: 45%;
+  }
+
+  .slider__btn--right {
+    right: 45%;
+  }
+  .dots {
+    bottom: -13%;
+    left: 45%;
+  }
 }
 @media (max-width: 1000px) {
   .own {
@@ -108,6 +125,16 @@
 @media (max-width: 685px) {
   .hero-section {
     height: 100vh;
+  }
+  .slider__btn--left {
+    left: 35%;
+  }
+  .dots {
+    bottom: -13%;
+    left: 35%;
+  }
+  .slider__btn--right {
+    right: 35%;
   }
   .hero-inputs {
     flex-direction: column;
@@ -306,10 +333,5 @@
     width: 5.5rem;
     font-size: 3.25rem;
     cursor: pointer;
-  }
-}
-@media (max-width: 450px) {
-  body {
-    background-color: #8bff8b;
   }
 }
