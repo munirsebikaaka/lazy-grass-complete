@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  max-width: 1250px;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
   font-family: sans-serif;
@@ -36,8 +36,10 @@ body {
   padding: 5px 5px;
   border: 1px solid #eeeeee;
   margin-bottom: 20px;
+  position: relative;
 }
-.application-lists {
+.application-lists,
+.addREsponseMain {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,7 +60,7 @@ body {
 .nav-design {
   display: flex;
   /* align-items: center; */
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .btn-link-des {
   background-color: var(--btn-color-hero);
@@ -100,7 +102,33 @@ body {
   height: 40px;
   width: 40px;
 }
-.resposive-nav,
+.main-response-nav {
+  /* margin-top: 100px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  background-color: var(--primary-color);
+  width: 300px;
+  padding: 20px;
+  position: absolute;
+  top: 0%;
+  left: 74%;
+  height: 100vh;
+  display: none;
+}
+.main-cell-border {
+  border-bottom: 1px solid #cecece;
+}
+.main-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  gap: 24px;
+  padding: 30px;
+}
+.responsive-nav,
 .close-menu {
   display: none;
 }
@@ -279,6 +307,43 @@ body {
   max-width: 60rem;
   margin: 0 auto;
   margin-bottom: 4rem;
+}
+.warranty-in-cell2 {
+  font-size: 34px;
+}
+.warranty-in-cell3 {
+  font-size: 24px;
+}
+.warranty-in-cell1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: var(--primary-color);
+  width: 200px;
+  border-radius: 50%;
+}
+.years-dis {
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  line-height: 1.3;
+  padding: 10px;
+  border-radius: 18px;
+  background-color: var(--primary-color);
+}
+.warranty-dis {
+  position: relative;
+}
+.warranty-body-cell {
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .center-img {
   display: flex;
@@ -529,12 +594,13 @@ body {
 .slide {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 60px;
-  margin-bottom: 30px;
+  justify-content: center;
+  gap: 50px;
+  margin: 20px;
+  /* margin-bottom: 30px; */
   position: absolute;
   top: 20%;
-  /* left: 8%; */
+  left: 1%;
   overflow: hidden;
   padding: 40px;
   margin-left: -20px;
@@ -542,7 +608,7 @@ body {
 }
 .projects-img {
   width: 350px;
-  height: 450px;
+  height: 500px;
   border-radius: 30px;
 }
 .img-slide {
@@ -752,6 +818,27 @@ footer p {
 }
 .dots {
   /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
+  /* bottom: -8%; */
   left: 47%;
 }
 .slider__btn {
@@ -764,22 +851,22 @@ footer p {
   font-family: inherit;
   color: var(--primary-color);
   border-radius: 50%;
-  height: 5.5rem;
-  width: 5.5rem;
-  font-size: 3.25rem;
+  height: 3.3rem;
+  width: 3.3rem;
+  font-size: 1.8rem;
   cursor: pointer;
 }
 .slider__btn--left {
-  left: 2%;
+  left: 3%;
   transform: translate(-50%, -50%);
 }
 
 .slider__btn--right {
-  right: 2%;
+  right: 3%;
   transform: translate(50%, -50%);
 }
 .warranty-dis {
-  background-image: url(main-imgs/img-5.jpg);
+  background-image: url(main-imgs/use-bacground.jpg);
   height: 100vh;
   margin-bottom: 100px;
   background-size: cover;

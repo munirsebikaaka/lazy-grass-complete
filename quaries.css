@@ -104,11 +104,21 @@
     margin-bottom: 40px;
     gap: 20px;
   }
+
+  .addREsponseMain,
+  .addREsponseMain2 {
+    display: none;
+  }
+  .main-response-nav,
+  .responsive-nav {
+    display: block;
+  }
 }
 @media (max-width: 850px) {
   .installation-img {
     height: 450px;
   }
+
   .installation {
     max-width: 35rem;
     margin-bottom: 4rem;
