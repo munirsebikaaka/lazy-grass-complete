@@ -13,6 +13,7 @@ const heroInput = document.querySelector(".register-input");
 const clientsCell = document.querySelector(".clients");
 const projectsCell = document.querySelector(".projects");
 const projectsSlider = document.querySelectorAll(".slide");
+const slideImages = document.querySelectorAll(".slide2");
 
 const btnLeft = document.querySelector(".left");
 const btnRight = document.querySelector(".right");
@@ -139,6 +140,9 @@ function proHeadAnimation() {
 proHeadAnimation();
 
 //APPLICATION SLIDER FUNCTIONALLITY
+const slideResponseBtnright = document.querySelector(
+  ".slide-btn-img-only-right"
+);
 function addTransformPropertyToSliders(sliders) {
   sliders.forEach(
     (slide, i) => (slide.style.transform = `translateX(${100 * i}%)`)
@@ -146,6 +150,7 @@ function addTransformPropertyToSliders(sliders) {
 }
 addTransformPropertyToSliders(clientsSlide);
 addTransformPropertyToSliders(projectsSlider);
+addTransformPropertyToSliders(slideImages);
 
 //CLIENTS ONLY
 
@@ -223,6 +228,8 @@ btnLeft.addEventListener("click", function () {
   slideToLeft(clientsSlide, ".dot", "slide", ".dot");
 });
 
+const dotsImgOnly = document.querySelector(".img-dots-only");
+
 //PROJECTS SECTION
 projectsSlider.forEach((el, i) =>
   imgDotsContainer.insertAdjacentHTML(
@@ -232,6 +239,15 @@ projectsSlider.forEach((el, i) =>
 `
   )
 );
+slideImages.forEach((el, i) =>
+  dotsImgOnly.insertAdjacentHTML(
+    "beforeend",
+    `
+    <p class="dot-img-only" data-only="${i}"></p>
+  `
+  )
+);
+
 function clickEventsOfTheImgSlidesSections() {
   imgDotsContainer.addEventListener("click", function (e) {
     if (!e.target.classList.contains("dot-img")) return;
@@ -245,6 +261,10 @@ function clickEventsOfTheImgSlidesSections() {
   });
   btnImageLeft.addEventListener("click", function () {
     slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
+  });
+
+  slideResponseBtnright.addEventListener("click", function () {
+    slideToRight(slideImages, ".dot-img-only", "only", ".dot-img-only");
   });
 
   clientsSlide.forEach((el, i) =>
@@ -289,3 +309,18 @@ function projectsObserver() {
   projectsCellObserver.observe(projectsCell);
 }
 projectsObserver();
+//THE RESPONSIVE NAVIGATION FUNCTIONALLITY
+const openNavBtn = document.querySelector(".open-menu");
+const closeNavBtn = document.querySelector(".close-menu");
+const RESPONSIVENAV = document.querySelector(".main-response-nav");
+openNavBtn.addEventListener("click", function () {
+  RESPONSIVENAV.classList.remove("hidden-nav");
+  RESPONSIVENAV.style.opacity = 1;
+  closeNavBtn.style.display = "block";
+  openNavBtn.style.display = "none";
+});
+closeNavBtn.addEventListener("click", function () {
+  RESPONSIVENAV.classList.add("hidden-nav");
+  closeNavBtn.style.display = "none";
+  openNavBtn.style.display = "block";
+});

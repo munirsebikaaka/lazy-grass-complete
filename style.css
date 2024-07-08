@@ -118,6 +118,9 @@ body {
 .close-menu {
   display: none;
 }
+.main-response-nav {
+  display: none;
+}
 /* SECTION--HEROSECTION */
 .hero-section {
   border: 1px solid red;
@@ -254,7 +257,6 @@ body {
 .products-discription,
 .instalation-head,
 .instalation-discription,
-.warranty-head,
 .dis,
 .artificial-head,
 .artificial-range {
@@ -262,7 +264,6 @@ body {
 }
 .products-head,
 .instalation-head,
-.warranty-head,
 .artificial-head {
   font-size: 3.5rem;
   text-transform: capitalize;
@@ -297,43 +298,7 @@ body {
   margin: 0 auto;
   margin-bottom: 4rem;
 }
-.warranty-in-cell2 {
-  font-size: 34px;
-}
-.warranty-in-cell3 {
-  font-size: 24px;
-}
-.warranty-in-cell1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  background-color: var(--primary-color);
-  width: 200px;
-  border-radius: 50%;
-}
-.years-dis {
-  font-size: 18px;
-  letter-spacing: 1.3px;
-  line-height: 1.3;
-  padding: 10px;
-  border-radius: 18px;
-  background-color: var(--primary-color);
-}
-.warranty-dis {
-  position: relative;
-}
-.warranty-body-cell {
-  width: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 .center-img {
   display: flex;
   align-self: center;
@@ -425,21 +390,22 @@ body {
 
 .partners {
   border: 1px solid red;
-  width: 75rem;
-  margin: 0 auto;
+  width: 60rem;
+  margin: 80px auto;
+  padding: 40px;
 }
 .partner-logo {
   width: 9.5rem;
   height: 2rem;
-  margin-bottom: 20px;
 }
 .prtners-cell {
   border: 1px solid red;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  align-items: center;
+  display: flex;
+
   justify-content: center;
+  gap: 60px;
+  margin-top: 20px;
 }
 .partners-discription {
   text-align: center;
@@ -589,6 +555,10 @@ body {
   position: relative;
   height: 720px;
   /* overflow: hidden; */
+  display: none;
+}
+.container-img-dots {
+  display: none;
 }
 .slide {
   display: flex;
@@ -747,7 +717,8 @@ footer p {
   text-align: center;
 }
 .dot,
-.dot-img {
+.dot-img,
+.dot-img-only {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -869,23 +840,18 @@ footer p {
   right: 3%;
   transform: translate(50%, -50%);
 }
-.warranty-dis {
-  border: 1px solid red;
 
-  background-image: url(main-imgs/use-bacground.jpg);
-  height: 100vh;
-  margin-bottom: 100px;
-  background-size: cover;
-}
 /* SLIDE IMGS ONLY */
 .slide-imgs-only {
-  display: none;
+  /* display: none; */
   position: relative;
-  /* width: 600px; */
-  /* margin: 0 auto; */
+
   height: 100vh;
   /* border: 1px solid red; */
   /* text-align: center; */
+}
+.container-img-dots {
+  display: none;
 }
 .slide-imgs {
   width: 500px;

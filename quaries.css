@@ -122,10 +122,12 @@
     width: 300px;
     padding: 20px;
     position: fixed;
-    top: 14.4%;
+    top: 13%;
     left: 70%;
     height: 70vh;
     z-index: 100;
+    transition: transform 1s, opacity 1s;
+    display: block;
   }
   .hidden-nav {
     display: none;
@@ -153,6 +155,18 @@
   }
   .main-response-nav {
     left: 65%;
+  }
+  .partners {
+    width: 40rem;
+    margin: 70px auto;
+  }
+  .partner-logo {
+    width: 7rem;
+    height: 1.4rem;
+  }
+  .prtners-cell {
+    justify-content: center;
+    gap: 40px;
   }
 }
 @media (max-width: 685px) {
@@ -223,6 +237,17 @@
   }
   .main-response-nav {
     left: 58%;
+  }
+  .prtners-cell {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .partners {
+    width: 25rem;
+    margin: 70px auto;
   }
 }
 @media (max-width: 500px) {
