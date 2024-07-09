@@ -126,9 +126,9 @@ body {
   border: 1px solid red;
   width: 96%;
   margin: 0 auto;
-  background-image: url(main-imgs/img-1.jpg);
+  background-image: url(main-imgs/close-up-legs-playing-with-ball.jpg);
   background-size: cover;
-  height: 90vh;
+  height: 100vh;
   border-radius: 35px;
   /* margin-top: 5px; */
   padding: 10px;
@@ -555,11 +555,9 @@ body {
   position: relative;
   height: 720px;
   /* overflow: hidden; */
-  display: none;
+  /* display: none; */
 }
-.container-img-dots {
-  display: none;
-}
+
 .slide {
   display: flex;
   align-items: center;
@@ -598,7 +596,6 @@ body {
 /* HELP */
 .help {
   border: 1px solid red;
-
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -722,7 +719,7 @@ footer p {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #ff6638;
+  background-color: gray;
 }
 .active-dot {
   background-color: #001f00;
@@ -843,24 +840,44 @@ footer p {
 
 /* SLIDE IMGS ONLY */
 .slide-imgs-only {
-  /* display: none; */
-  position: relative;
-
-  height: 100vh;
-  /* border: 1px solid red; */
-  /* text-align: center; */
-}
-.container-img-dots {
   display: none;
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+  height: 100vh;
+  border: 1px solid red;
+  overflow: hidden;
+}
+.work-btn {
+  position: absolute;
+  top: 50%;
+}
+.work-btn-right {
+  right: 15%;
+}
+.work-btn-left {
+  left: 15%;
 }
 .slide-imgs {
   width: 500px;
   height: 550px;
   position: absolute;
   top: 0%;
-  left: 20%;
+  left: 0%;
   padding: 30px;
+
   border-radius: 60px;
+  transition: transform 1s;
+}
+.img-dots-only {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 5%;
+  left: 18%;
+}
+.worked {
+  display: none;
 }
 /* ARTIFICIALS IN SMALL */
 .artificial-in-small {

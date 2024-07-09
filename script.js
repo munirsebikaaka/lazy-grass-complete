@@ -14,15 +14,24 @@ const clientsCell = document.querySelector(".clients");
 const projectsCell = document.querySelector(".projects");
 const projectsSlider = document.querySelectorAll(".slide");
 const slideImages = document.querySelectorAll(".slide2");
+const openNavBtn = document.querySelector(".open-menu");
+const closeNavBtn = document.querySelector(".close-menu");
+const RESPONSIVENAV = document.querySelector(".main-response-nav");
+const dotsImgOnly = document.querySelector(".img-dots-only");
+const slideImagesAllCell = document.querySelector(".slide-imgs-only");
 
 const btnLeft = document.querySelector(".left");
 const btnRight = document.querySelector(".right");
 const btnImageRight = document.querySelector(".img-right");
 const btnImageLeft = document.querySelector(".img-left");
 const startRequestBTN = document.querySelectorAll(".chech-input");
+const slideResBtnRIGHT = document.querySelector(".work-plz");
+const slideResBtnLEFT = document.querySelector(".work-plz-left");
 
 let curValue = 0;
 let maxlength = clientsSlide.length;
+let imgLength = slideImages.length;
+
 //CLIENT SLIDER TIMES
 let time = 3;
 let secTime = 5;
@@ -35,7 +44,24 @@ let proTime2 = 5;
 let proTime3 = 7;
 let proTime4 = 9;
 
+//PROJECT RESPONSIVE SLIDER TIMES
+let imgValue = 0;
+let restime1 = 3;
+let restime2 = 5;
+let restime3 = 7;
+let restime4 = 9;
+let restime5 = 11;
+let restime6 = 13;
+let restime7 = 15;
+let restime8 = 17;
+let restime9 = 19;
+let restime10 = 21;
+let restime11 = 13;
+let restime12 = 25;
+let restime13 = 27;
+
 //SMOOTH SCROLLING FUNCTIONALLITY
+
 startRequestBTN.forEach((btn) =>
   btn.addEventListener("click", function () {
     let value = heroInput.value;
@@ -44,19 +70,26 @@ startRequestBTN.forEach((btn) =>
   })
 );
 function allAboutScrolling() {
-  function workWithSmoothScrollings(target) {
-    if (target.classList.contains("working-link")) {
+  function workWithSmoothScrollings(target, classToScollTO) {
+    if (target.classList.contains(classToScollTO)) {
       const id = target.getAttribute("href");
       document.querySelector(id).scrollIntoView({ behavior: "smooth" });
     }
   }
   navigationCell.addEventListener("click", function (e) {
     e.preventDefault();
-    workWithSmoothScrollings(e.target);
+    workWithSmoothScrollings(e.target, "working-link");
   });
   footerNav.addEventListener("click", (e) => {
     e.preventDefault();
     workWithSmoothScrollings(e.target);
+  });
+  RESPONSIVENAV.addEventListener("click", function (e) {
+    e.preventDefault();
+    workWithSmoothScrollings(e.target, "working-link");
+    RESPONSIVENAV.classList.add("hidden-nav");
+    closeNavBtn.style.display = "none";
+    openNavBtn.style.display = "block";
   });
 }
 allAboutScrolling();
@@ -140,9 +173,6 @@ function proHeadAnimation() {
 proHeadAnimation();
 
 //APPLICATION SLIDER FUNCTIONALLITY
-const slideResponseBtnright = document.querySelector(
-  ".slide-btn-img-only-right"
-);
 function addTransformPropertyToSliders(sliders) {
   sliders.forEach(
     (slide, i) => (slide.style.transform = `translateX(${100 * i}%)`)
@@ -150,10 +180,8 @@ function addTransformPropertyToSliders(sliders) {
 }
 addTransformPropertyToSliders(clientsSlide);
 addTransformPropertyToSliders(projectsSlider);
-addTransformPropertyToSliders(slideImages);
 
 //CLIENTS ONLY
-
 const activeDot = function (classes, slide, slidesType, classToAdd) {
   document
     .querySelectorAll(classes)
@@ -228,8 +256,6 @@ btnLeft.addEventListener("click", function () {
   slideToLeft(clientsSlide, ".dot", "slide", ".dot");
 });
 
-const dotsImgOnly = document.querySelector(".img-dots-only");
-
 //PROJECTS SECTION
 projectsSlider.forEach((el, i) =>
   imgDotsContainer.insertAdjacentHTML(
@@ -237,14 +263,6 @@ projectsSlider.forEach((el, i) =>
     `
     <p class="dot-img" data-slider="${i}"></p>
 `
-  )
-);
-slideImages.forEach((el, i) =>
-  dotsImgOnly.insertAdjacentHTML(
-    "beforeend",
-    `
-    <p class="dot-img-only" data-only="${i}"></p>
-  `
   )
 );
 
@@ -261,10 +279,6 @@ function clickEventsOfTheImgSlidesSections() {
   });
   btnImageLeft.addEventListener("click", function () {
     slideToRight(projectsSlider, ".dot-img", "slider", ".dot-img");
-  });
-
-  slideResponseBtnright.addEventListener("click", function () {
-    slideToRight(slideImages, ".dot-img-only", "only", ".dot-img-only");
   });
 
   clientsSlide.forEach((el, i) =>
@@ -310,17 +324,114 @@ function projectsObserver() {
 }
 projectsObserver();
 //THE RESPONSIVE NAVIGATION FUNCTIONALLITY
-const openNavBtn = document.querySelector(".open-menu");
-const closeNavBtn = document.querySelector(".close-menu");
-const RESPONSIVENAV = document.querySelector(".main-response-nav");
-openNavBtn.addEventListener("click", function () {
-  RESPONSIVENAV.classList.remove("hidden-nav");
-  RESPONSIVENAV.style.opacity = 1;
-  closeNavBtn.style.display = "block";
-  openNavBtn.style.display = "none";
-});
-closeNavBtn.addEventListener("click", function () {
-  RESPONSIVENAV.classList.add("hidden-nav");
-  closeNavBtn.style.display = "none";
-  openNavBtn.style.display = "block";
-});
+function AllABOUTNavResponsive() {
+  function workWithResNav(addStyle, RemoveStyle) {
+    addStyle.style.display = "block";
+    RemoveStyle.style.display = "none";
+  }
+  openNavBtn.addEventListener("click", function () {
+    RESPONSIVENAV.classList.remove("hidden-nav");
+    workWithResNav(closeNavBtn, openNavBtn);
+  });
+  closeNavBtn.addEventListener("click", function () {
+    RESPONSIVENAV.classList.add("hidden-nav");
+    workWithResNav(openNavBtn, closeNavBtn);
+  });
+}
+AllABOUTNavResponsive();
+
+//WORKING WITH RESPONSIVE IMAGES
+slideImages.forEach((el, i) =>
+  dotsImgOnly.insertAdjacentHTML(
+    "beforeend",
+    `
+    <p class="dot-img-only" data-slides="${i}"></p>
+  `
+  )
+);
+
+document.querySelectorAll(".dot-img-only")[0].classList.add("active-dot");
+function dotsActivating(slide) {
+  document
+    .querySelectorAll(".dot-img-only")
+    .forEach((el) => el.classList.remove("active-dot"));
+  document
+    .querySelector(`.dot-img-only[data-slides='${slide}']`)
+    .classList.add("active-dot");
+}
+
+slideImages.forEach(
+  (img, i) => (img.style.transform = `translateX(${i * 100}%)`)
+);
+
+function resSlideSolution(slideValue) {
+  slideImages.forEach(
+    (img, i) => (img.style.transform = `translateX(${100 * (i - slideValue)}%)`)
+  );
+}
+
+function resSlideRight() {
+  if (imgValue === imgLength - 1) imgValue = -1;
+  imgValue++;
+  resSlideSolution(imgValue);
+  dotsActivating(imgValue);
+}
+function resSlideLeft() {
+  if (imgValue === 0) imgValue = imgLength;
+  imgValue--;
+  resSlideSolution(imgValue);
+  dotsActivating(imgValue);
+}
+function clickedDot() {
+  dotsImgOnly.addEventListener("click", function (e) {
+    if (e.target.classList.contains("dot-img-only")) {
+      const slides = e.target.dataset.slides;
+      resSlideSolution(slides);
+      dotsActivating(slides);
+    }
+  });
+}
+clickedDot();
+slideResBtnRIGHT.addEventListener("click", resSlideRight);
+slideResBtnLEFT.addEventListener("click", resSlideLeft);
+function resAutoSlide() {
+  setInterval(function () {
+    restime1--;
+    restime2--;
+    restime3--;
+    restime4--;
+    restime5--;
+    restime6--;
+    restime7--;
+    restime8--;
+    restime9--;
+    restime10--;
+    restime11--;
+    restime12--;
+    restime13--;
+    if (restime1 === 0) resSlideRight();
+    if (restime2 === 0) resSlideRight();
+    if (restime3 === 0) resSlideRight();
+    if (restime4 === 0) resSlideRight();
+    if (restime5 === 0) resSlideRight();
+    if (restime6 === 0) resSlideRight();
+    if (restime7 === 0) resSlideRight();
+    if (restime8 === 0) resSlideRight();
+    if (restime9 === 0) resSlideRight();
+    if (restime10 === 0) resSlideRight();
+    if (restime11 === 0) resSlideRight();
+    if (restime12 === 0) resSlideRight();
+    if (restime13 === 0) resSlideRight();
+  }, 1000);
+}
+const resImgSlideObs = new IntersectionObserver(
+  function (entries) {
+    const [entry] = entries;
+    if (entry.isIntersecting) resAutoSlide();
+  },
+  {
+    root: null,
+    threshold: 0,
+  }
+);
+resImgSlideObs.observe(slideImagesAllCell);
