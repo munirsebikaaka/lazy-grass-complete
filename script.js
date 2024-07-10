@@ -82,7 +82,7 @@ function allAboutScrolling() {
   });
   footerNav.addEventListener("click", (e) => {
     e.preventDefault();
-    workWithSmoothScrollings(e.target);
+    workWithSmoothScrollings(e.target, "working-link");
   });
   RESPONSIVENAV.addEventListener("click", function (e) {
     e.preventDefault();
@@ -134,23 +134,23 @@ function positionNavigation() {
 positionNavigation();
 
 //SECTIONS TRANSITIONS
-// function fedInSections() {
-//   workWithSections.forEach((el) => el.classList.add("pro-dis-hide"));
-//   const removingFunction = function (entries) {
-//     const [entry] = entries;
-//     if (entry.isIntersecting) {
-//       setInterval(function () {
-//         workWithSections.forEach((el) => el.classList.remove("pro-dis-hide"));
-//       }, 1000);
-//     }
-//   };
-//   const removeProClass = new IntersectionObserver(removingFunction, {
-//     root: null,
-//     threshold: 0,
-//   });
-//   workWithSections.forEach((el) => removeProClass.observe(el));
-// }
-// fedInSections();
+function fedInSections() {
+  workWithSections.forEach((el) => el.classList.add("pro-dis-hide"));
+  const removingFunction = function (entries) {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      setInterval(function () {
+        workWithSections.forEach((el) => el.classList.remove("pro-dis-hide"));
+      }, 1000);
+    }
+  };
+  const removeProClass = new IntersectionObserver(removingFunction, {
+    root: null,
+    threshold: 0,
+  });
+  workWithSections.forEach((el) => removeProClass.observe(el));
+}
+fedInSections();
 
 //PRODUCTS HEAD TRANSITION
 function proHeadAnimation() {

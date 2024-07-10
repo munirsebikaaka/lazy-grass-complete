@@ -142,7 +142,7 @@
     left: 30%;
   }
   .img-dots-only {
-    bottom: 6%;
+    bottom: 1%;
     left: 20%;
   }
   .worked {
@@ -150,9 +150,6 @@
   }
 }
 @media (max-width: 850px) {
-  body {
-    background-color: #f16439;
-  }
   .installation-img {
     height: 450px;
   }
@@ -199,9 +196,6 @@
   } */
 }
 @media (max-width: 685px) {
-  body {
-    background-color: blue;
-  }
   .hero-section {
     height: 100vh;
   }
@@ -286,14 +280,11 @@
     left: 40%;
   }
   .img-dots-only {
-    bottom: 8%;
+    bottom: 1%;
     left: 24%;
   }
 }
 @media (max-width: 500px) {
-  body {
-    background-color: yellow;
-  }
   .hero-section {
     margin-bottom: 50px;
   }
@@ -465,7 +456,7 @@
     left: 40%;
   }
   .img-dots-only {
-    bottom: 18%;
+    bottom: 10%;
     left: 10%;
   }
   .work-btn {

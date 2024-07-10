@@ -8,7 +8,7 @@ body {
   margin: 0 auto;
   position: relative;
   font-family: sans-serif;
-  background-color: #f2f3f2;
+  background-color: #fafafa;
 }
 /* COMBINED SECTION DESIGNS */
 :root {
@@ -31,8 +31,6 @@ body {
 }
 /* NAVIGATION */
 .application-nav {
-  border: 1px solid red;
-
   padding: 5px 5px;
   border: 1px solid #eeeeee;
   margin-bottom: 20px;
@@ -59,7 +57,6 @@ body {
 }
 .nav-design {
   display: flex;
-  /* align-items: center; */
   justify-content: space-between;
 }
 .btn-link-des {
@@ -123,14 +120,12 @@ body {
 }
 /* SECTION--HEROSECTION */
 .hero-section {
-  border: 1px solid red;
   width: 96%;
   margin: 0 auto;
   background-image: url(main-imgs/close-up-legs-playing-with-ball.jpg);
   background-size: cover;
   height: 100vh;
   border-radius: 35px;
-  /* margin-top: 5px; */
   padding: 10px;
   margin-bottom: 100px;
 }
@@ -156,7 +151,7 @@ body {
 }
 .register-hero {
   border-radius: 11px;
-  background-color: #ffffff;
+  background-color: var(--primary-color);
   padding: 20px;
 }
 .register-head {
@@ -206,8 +201,6 @@ body {
 }
 /* owns */
 .own {
-  border: 1px solid red;
-
   width: 70rem;
   margin: 0 auto;
   border-radius: 11px;
@@ -323,8 +316,6 @@ body {
 }
 /* **************** */
 .products {
-  border: 1px solid red;
-
   margin: 0 auto;
 }
 .product-cell {
@@ -347,7 +338,7 @@ body {
 }
 .product-dis {
   font-size: 1.3rem;
-  color: grey;
+  color: var(--products-color);
   font-weight: 500;
   margin-bottom: 40px;
 }
@@ -389,7 +380,6 @@ body {
 /* PARTNERS */
 
 .partners {
-  border: 1px solid red;
   width: 60rem;
   margin: 80px auto;
   padding: 40px;
@@ -399,8 +389,6 @@ body {
   height: 2rem;
 }
 .prtners-cell {
-  border: 1px solid red;
-
   display: flex;
 
   justify-content: center;
@@ -416,8 +404,6 @@ body {
 }
 /* ARTIFICIALS */
 .artificial {
-  border: 1px solid red;
-
   width: 70rem;
   margin: 0 auto;
   margin-bottom: 2.5rem;
@@ -442,8 +428,6 @@ body {
   background-color: #fad4c9;
 }
 .ranges {
-  border: 1px solid red;
-
   max-width: 50rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
@@ -525,18 +509,8 @@ body {
   height: 30px;
   color: var(--tercially-color);
 }
-/* PROJECTS */
-/* PROJECTS */
-/* PROJECTS */
-/* PROJECTS */
-/* PROJECTS */
-/* PROJECTS */
-/* PROJECTS */
-/* PROJECTS */
-/* PROJECTS */
-.projects {
-  border: 1px solid red;
 
+.projects {
   width: 100%;
   background-color: black;
   padding: 50px;
@@ -554,8 +528,6 @@ body {
 .slider-container {
   position: relative;
   height: 720px;
-  /* overflow: hidden; */
-  /* display: none; */
 }
 
 .slide {
@@ -564,7 +536,6 @@ body {
   justify-content: center;
   gap: 50px;
   margin: 20px;
-  /* margin-bottom: 30px; */
   position: absolute;
   top: 5%;
   left: 0.5%;
@@ -581,27 +552,14 @@ body {
 .img-slide {
   background-color: white;
 }
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
-/* HELP */
+
 .help {
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 50px;
   background-color: #edeeed;
-  margin: 100px 0;
+  margin: 120px 0;
 }
 .help-dis {
   font-size: 1.2rem;
@@ -620,7 +578,6 @@ body {
 }
 /* FOOTER */
 footer {
-  border: 1px solid red;
   background-color: #001a0bf5;
 
   padding: 30px;
@@ -674,28 +631,8 @@ footer p {
   align-items: center;
   gap: 40px;
 }
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
-/* CLIENTS */
+
 .clients {
-  border: 1px solid red;
   position: relative;
   width: 1010px;
   margin: 0 auto;
@@ -719,10 +656,10 @@ footer p {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: gray;
+  background-color: var(--products-color);
 }
 .active-dot {
-  background-color: #001f00;
+  background-color: var(--tercially-color);
 }
 .slide-client {
   width: 1010px;
@@ -784,28 +721,6 @@ footer p {
   left: 50%;
 }
 .dots {
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
-  /* bottom: -8%; */
   left: 47%;
 }
 .slider__btn {
@@ -845,7 +760,6 @@ footer p {
   width: 500px;
   margin: 0 auto;
   height: 100vh;
-  border: 1px solid red;
   overflow: hidden;
 }
 .work-btn {
@@ -878,6 +792,20 @@ footer p {
 }
 .worked {
   display: none;
+  border: none;
+  background: var(--tercially-color);
+  font-family: inherit;
+  color: var(--primary-color);
+  border-radius: 50%;
+  height: 3.3rem;
+  width: 3.3rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.worked:hover {
+  height: 3.5rem;
+  width: 3.5rem;
 }
 /* ARTIFICIALS IN SMALL */
 .artificial-in-small {
